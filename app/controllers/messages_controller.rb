@@ -1,2 +1,2 @@
-class MessagesController < ApplicationController
+class MessagesController < JSONAPI::ResourceController
 end

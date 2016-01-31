@@ -4,6 +4,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def newMessage(data)
+    puts params
     ActionCable.server.broadcast "chat_#{params[:room]}", data
   end
 end

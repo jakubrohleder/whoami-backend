@@ -18,22 +18,25 @@ ActiveRecord::Schema.define(version: 20160130160247) do
   enable_extension "uuid-ossp"
 
   create_table "conversations", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.uuid     "author",                             null: false
-    t.uuid     "whoami"
+    t.uuid     "author_id",                          null: false
+    t.uuid     "whoami_id"
     t.string   "status",         default: "created", null: false
     t.datetime "author_seen_at"
     t.datetime "whoami_seen_at"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "messages", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.uuid     "author"
-    t.uuid     "conversation"
-    t.text     "text"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.uuid     "author_id",       null: false
+    t.uuid     "conversation_id", null: false
+    t.text     "text",            null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/apsure/jsonapi-resources.git
+  revision: 8dbb0d2e66c0f1c9c7235d5df762ae2ccaf95951
+  branch: rails5
+  specs:
+    jsonapi-resources (0.7.0)
+      rails (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,6 +36,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.9.4)
+      activemodel (>= 3.2)
     activejob (5.0.0.beta1.1)
       activesupport (= 5.0.0.beta1.1)
       globalid (>= 0.3.6)
@@ -79,6 +89,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.9.1)
     execjs (2.6.0)
+    faker (1.6.1)
+      i18n (~> 0.5)
     faye-websocket (0.10.2)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
@@ -154,7 +166,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   byebug
+  faker
+  jsonapi-resources!
   pg
   puma
   rails (>= 5.0.0.beta1, < 5.1)

@@ -1,2 +1,2 @@
-class ConversationsController < ApplicationController
+class ConversationsController < JSONAPI::ResourceController
 end
