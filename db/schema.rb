@@ -18,13 +18,16 @@ ActiveRecord::Schema.define(version: 20160130160247) do
   enable_extension "uuid-ossp"
 
   create_table "conversations", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.uuid     "author_id",                          null: false
+    t.uuid     "author_id",                       null: false
     t.uuid     "whoami_id"
-    t.string   "status",         default: "created", null: false
+    t.string   "status",         default: "open", null: false
+    t.string   "respondent"
+    t.string   "answer"
+    t.integer  "length",         default: 1
     t.datetime "author_seen_at"
     t.datetime "whoami_seen_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "messages", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|

@@ -1,5 +1,6 @@
 class UserResource < JSONAPI::Resource
-  immutable
-
   attribute :name
+
+  has_many :conversations
+  has_many :messages
 end
